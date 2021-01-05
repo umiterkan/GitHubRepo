@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/repoListFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_repo_list"
+        android:id="@+id/repoListFragment"
+        android:name="com.erkan.githubrepo.ui.list.RepoListFragment"
+        android:label="Repo Search" >
+        <action
+            android:id="@+id/action_repoListFragment_to_repoDetailFragment"
+            app:destination="@id/repoDetailFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_repo_detail"
+        android:id="@+id/repoDetailFragment"
+        android:name="com.erkan.githubrepo.ui.detail.RepoDetailFragment"
+        android:label="{title}">
+        <argument android:name="repo" app:argType="com.erkan.githubrepo.data.model.Repo"/>
+        <argument android:name="title" app:argType="string"/>
+    </fragment>
+
+</navigation>

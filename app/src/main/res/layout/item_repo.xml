@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="position"
+            type="int"/>
+
+        <variable
+            name="data"
+            type="com.erkan.githubrepo.data.model.Repo" />
+
+        <variable
+            name="myListener"
+            type="com.erkan.githubrepo.adapter.RepoAdapter.RepoListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:onClick="@{()->myListener.onRepoItemClick(data)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:rippleColor="@color/purple_200"
+        app:strokeColor="@color/purple_500"
+        app:strokeWidth="0.2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="20dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/image_view_favorite"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="@{data.name}"
+                android:textColor="@color/purple_700"
+                app:autoSizeMaxTextSize="15sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeTextType="uniform" />
+
+            <ImageView
+                android:contentDescription="@null"
+                android:onClick="@{()->myListener.onRepoAddFavorite(data,position)}"
+                android:id="@+id/image_view_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_star_passive"
+                app:loadStarIcon="@{data}" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

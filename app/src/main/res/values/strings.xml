@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GithubRepo</string>
+    <string name="btn_search">Search</string>
+    <string name="hint_username">Username</string>
+    <string name="info">Info</string>
+    <string name="alert_info_ok_button">OK</string>
+    <string name="alert_empty_repo">Empty Repository</string>
+    <string name="repo_detail_title">Detail</string>
+</resources>
