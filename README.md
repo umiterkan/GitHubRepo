@@ -5,10 +5,10 @@
 - Single Activity
 - MVVM Pattern
 
-    **View:
-    **ViewModel:
-    **DataSource:
-    **Repository:
+    -View:
+    -ViewModel:
+    -DataSource:
+    -Repository:
     
 ### Dependencies
 
