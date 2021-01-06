@@ -2,27 +2,23 @@ package com.erkan.githubrepo.ui.list
 
 import androidx.databinding.ObservableBoolean
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.erkan.githubrepo.adapter.RepoAdapter
 import com.erkan.githubrepo.data.Resource
 import com.erkan.githubrepo.data.database.dao.FavoriteDao
 import com.erkan.githubrepo.data.database.entity.Favorite
-import com.erkan.githubrepo.data.model.Owner
 import com.erkan.githubrepo.data.model.Repo
 import com.erkan.githubrepo.data.repository.RepoRepository
 import kotlinx.coroutines.launch
-import timber.log.Timber
-import kotlin.random.Random
+
 
 /**
  * Created by umiterkan on 1/2/2021
  */
 
 class RepoListViewModel @ViewModelInject constructor(
-    val repoRepository: RepoRepository,
+    val provideRepository: RepoRepository,
     val favoriteDao: FavoriteDao
 ) : ViewModel() {
 
@@ -53,7 +49,7 @@ class RepoListViewModel @ViewModelInject constructor(
     fun getRepoList(username: String) {
         observeLoading.set(true)
         viewModelScope.launch {
-            val resultData = repoRepository.getRepoList(username)
+            val resultData = provideRepository.getRepoList(username)
             when (resultData.status) {
                 Resource.Status.SUCCESS -> {
                     observeLoading.set(false)

@@ -13,6 +13,10 @@ import java.net.UnknownHostException
 
 abstract class BaseDataSource {
 
+    init {
+        Timber.d("init BaseDataSource")
+    }
+
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {
         try {
             val response = call()

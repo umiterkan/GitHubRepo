@@ -1,6 +1,7 @@
 package com.erkan.githubrepo.data.datasource
 
 import com.erkan.githubrepo.di.ApiServices
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -8,5 +9,9 @@ import javax.inject.Inject
  */
 
 class RepoDataSource @Inject constructor(val apiServices: ApiServices) : BaseDataSource() {
+    init {
+        Timber.d("init RepoDataSource")
+    }
+
     suspend fun getRepoList(username:String) = getResult { apiServices.getRepoList(username) }
 }

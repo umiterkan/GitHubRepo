@@ -12,7 +12,9 @@ import javax.inject.Inject
  */
 
 class RepoRepository @Inject constructor(val repoDataSource: RepoDataSource,val favoriteDao: FavoriteDao) {
-
+    init {
+        Timber.d("init RepoRepository")
+    }
     suspend fun getRepoList(username: String): Resource<List<Repo>> {
         val repoList=repoDataSource.getRepoList(username)
         if (!favoriteDao.getFavorites().isEmpty())
