@@ -1,6 +1,4 @@
 # GitHubRepo
-github repo app
-
 
 ## Architecture
 
@@ -12,7 +10,7 @@ github repo app
     **DataSource:
     **Repository:
     
-#### Dependencies
+### Dependencies
 
   - **[Material Design]
   - **[Navigation Component]
