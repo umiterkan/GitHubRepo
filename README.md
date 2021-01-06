@@ -26,4 +26,4 @@ github repo app
   - **[Gson]
   - **[Room]
     
-<img src="https://raw.githubusercontent.com/umiterkan/GitHubRepo/develop/images/repo_home_search.png" width="500" />
+<img src="https://github.com/umiterkan/GitHubRepo/blob/master/images/repo_dark_mode.png" width="500" />
