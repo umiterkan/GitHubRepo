@@ -4,15 +4,10 @@
 
 - Single Activity
 - MVVM Pattern
-
-    -View:
-    -ViewModel:
-    -DataSource:
-    -Repository:
     
 ### Dependencies
 
-  - **[Material Design]
+  - **Material Design
   - **[Navigation Component]
   - **[LiveData]
   - **[ViewModel]
